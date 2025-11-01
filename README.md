@@ -1,6 +1,6 @@
 # Gerenciador de Estoque
 
-Este é um desafio pessoal.
+Este é um projeto voltado ao desevolvimento de uma atividade de minha faculdade.
 
 ## Instruções de Uso
 
