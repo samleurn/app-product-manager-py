@@ -1,48 +1,67 @@
 import os
-from dotenv import load_dotenv
 import psycopg2
+from flask import jsonify
+from dotenv import load_dotenv
 
-load_dotenv('config/.env')
+load_dotenv("config/.env")
 
 
 class Query:
-    def __init__(self, query):
+    def __init__(self, query, params=None):
         self._query = query
+        self._params = params
         self.connect()
 
     def connect(self):
         try:
 
-            db_name = os.getenv('DB_NAME')
-            db_user = os.getenv('DB_USER')
-            db_pass = os.getenv('DB_PASS')
-            db_host = os.getenv('DB_HOST')
-            db_port = os.getenv('DB_PORT')
+            db_name = os.getenv("DB_NAME")
+            db_user = os.getenv("DB_USER")
+            db_pass = os.getenv("DB_PASS")
+            db_host = os.getenv("DB_HOST")
+            db_port = os.getenv("DB_PORT") or "5432"
 
-            conn = psycopg2.connect(
-                dbname=db_name, user=db_user, password=db_pass, host=db_host, port=db_port or "5432")
-            
-            self._conn = conn
-            self._cur = conn.cursor()
+            self._conn = psycopg2.connect(
+                dbname=db_name,
+                user=db_user,
+                password=db_pass,
+                host=db_host,
+                port=db_port,
+            )
+
+            self._cursor = self._conn.cursor()
 
             print("Database connected successfully")
 
         except Exception as e:
-            print(f"Error connecting to database: {e}")
-            raise
+            return jsonify({"error": "Database connection failed"}), 500
 
     def query(self):
         try:
-            query = self._query
-            self._cur.execute(query)
-            data = self._cur.fetchall()
-            return data
-        except Exception as e:
-            print(f"Error executing query: {e}")
+
+            print("Executing query:", self._query)
+            print("With parameters:", self._params)
+
+            self._cursor.execute(self._query, self._params)
+
+            try:
+
+                return self._cursor.fetchall()
+
+            except psycopg2.ProgrammingError:
+
+                return jsonify({"error": "No data to fetch"}), 400
+
+        except Exception:
+
+            return jsonify({"error": "Query execution failed"}), 500
+
         finally:
             self.close()
 
     def close(self):
-        self._cur.close()
+
+        self._cursor.close()
         self._conn.close()
+
         print("Closing database connection")

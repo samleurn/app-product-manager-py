@@ -1,0 +1,50 @@
+### GET HELTH
+http://127.0.0.1:5000/api/health
+
+### HOME ROUTE
+http://127.0.0.1:5000/api/
+
+### POST BRAND
+POST http://127.0.0.1:5000/api/brand
+Content-Type: application/json
+
+{
+    "name": "Lenovo",
+    "cnpj": "0000.0000-0000"
+}
+
+
+### POST PRODUCT
+POST http://127.0.0.1:5000/api/product
+Content-Type: application/json
+
+{
+    "id" :"1",
+    "code":"ah9-yhu4h5i1h24io",
+    "model":"Lenovo Legion Slim 5i",
+    "specs":"
+    {
+        'cpu':'i5 1320hx',
+        'gpu':'rtx 3050',
+        'cpu_brand':'intel', 
+        'gpu_brand':'nvidia', 
+    }
+    ",
+    "quantity" :"0",
+    "price" :"5999.90",
+    "brand":"Lenovo"
+}
+
+### POST BATCH
+POST http://127.0.0.1:5000/api/batch
+Content-Type: application/json
+
+{
+    "id":"0",
+    "mov":"pjf-9qij1p2o34j-f",
+    "product_id":"0",
+    "quantity":"30",
+    "qrcode":"971240712g340812",
+    "price":"ex:(30 * 4499.90)",
+    "fiscal_note":"2"
+}   

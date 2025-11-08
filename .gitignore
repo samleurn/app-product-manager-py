@@ -1,9 +1,9 @@
 # Files
 
 TODO.md
+.env
 
 # Folders
 
-venv/
-config/
+backup
 __pycache__/
