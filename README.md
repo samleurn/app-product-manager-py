@@ -1,6 +1,6 @@
 # Gerenciador de Estoque
 
-Este é projeto pessoal.
+App de gerenciamento de estoque em python
 
 ## Techs
 
