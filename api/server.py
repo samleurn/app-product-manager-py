@@ -6,3 +6,4 @@ app = FastAPI()
 
 app.include_router(home, prefix="/api")
 app.include_router(product, prefix="/api")
+
