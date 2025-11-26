@@ -1,0 +1,13 @@
+class DbConnection:
+    def __init__(self): 
+        # Dot env
+        ...
+    def get_connection(): 
+        # Connection
+        ...
+    def get_cursor(): 
+        # Cursor, and params
+        ...
+    def get_close(): 
+        # Close cursor and conn
+        ...
