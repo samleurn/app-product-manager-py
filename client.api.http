@@ -1,0 +1,16 @@
+### GET API HOME
+GET http://127.0.0.1:8000/api/
+
+### GET API PRODUCTS
+GET http://127.0.0.1:8000/api/products
+
+### GET API PRODUCT
+GET http://127.0.0.1:8000/api/products/
+
+### POST API PRODUCT
+POST http://127.0.0.1:8000/api/products/
+Content-Type: application/json
+
+{
+    
+}

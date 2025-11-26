@@ -1,13 +1,13 @@
 from fastapi import APIRouter
 
-product = APIRouter()
+product = APIRouter(prefix="/products")
 
 
-@product.get("/product")
+@product.get("/")
 def get_products():
     return {"msg": "Products Route"}
 
 
-@product.get("/product/{uuid}")
+@product.get("/{uuid}")
 def get_product(uuid):
     return {"msg": "Product Route", "uuid": uuid}
