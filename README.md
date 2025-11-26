@@ -11,12 +11,12 @@ pip install "uvicorn[standard]" "reactpy[fastapi]" "fastapi[standard]"
 
 ```
 # To init the api
-uvicorn public.spa:app --reload
+uvicorn public.spa:app --reload --port 5050
 ```
 
 ```
 # To init the api
-uvicorn api.server:app --reload
+uvicorn api.server:app --reload --port 3333
 ```
 
 ### Techs
