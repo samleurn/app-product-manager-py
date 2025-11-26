@@ -11,7 +11,7 @@ pip install "uvicorn[standard]" "reactpy[fastapi]" "fastapi[standard]"
 
 ```
 # To init the api
-uvicorn app.api.server:app --reload
+uvicorn api.server:app --reload
 ```
 
 ### Techs
