@@ -1,14 +1,14 @@
 ### GET API HOME
-GET http://127.0.0.1:8000/api/
+GET http://127.0.0.1:3333/api/
 
 ### GET API PRODUCTS
-GET http://127.0.0.1:8000/api/products
+GET http://127.0.0.1:3333/api/products
 
 ### GET API PRODUCT
-GET http://127.0.0.1:8000/api/products/
+GET http://127.0.0.1:3333/api/products/khlkl
 
 ### POST API PRODUCT
-POST http://127.0.0.1:8000/api/products/
+POST http://127.0.0.1:3333/api/products/
 Content-Type: application/json
 
 {

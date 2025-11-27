@@ -1,13 +1,16 @@
 from fastapi import APIRouter
+from ..controllers.controller import Controller
 
 product = APIRouter(prefix="/products")
+
+productController = Controller()
 
 
 @product.get("/")
 def get_products():
-    return {"msg": "Products Route"}
+    return productController.product_controller("/getall")
 
 
 @product.get("/{uuid}")
 def get_product(uuid):
-    return {"msg": "Product Route", "uuid": uuid}
+    return productController.product_controller("/getone", uuid)
