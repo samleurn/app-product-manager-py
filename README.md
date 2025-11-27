@@ -1,6 +1,8 @@
 # Stock Manger
 
-App de gerenciamento de estoque em python, feito para uma ativadade em python da unifacimp wyden.
+App de gerenciamento de estoque em python, feito para uma ativadade da unifacimp wyden.
+
+Disciplina: Python
 
 Professor: Welliton Cunha
 
