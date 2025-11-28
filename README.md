@@ -2,10 +2,6 @@
 
 App de gerenciamento de estoque em python, feito para uma ativadade da unifacimp wyden.
 
-`Disciplina de planejamento: Uml`
-
-`Disciplina de prograamação: Pythonm`
-
 `Professor: Talles Canela - Uml`
 
 `Professor: Welliton Cunha - Python`
@@ -40,5 +36,6 @@ uvicorn api.server:app --reload --port 3333
 ![FastAPI](https://img.shields.io/badge/FastAPI-05998B?style=for-the-badge&logo=fastapi&logoColor=%23FFF)
 ![ReactPy](https://img.shields.io/badge/reactpy-%234CAF50.svg?style=for-the-badge&logo=react&logoColor=%23FFF)
 ![Uvicorn](https://img.shields.io/badge/uvicorn-%234c51bf.svg?style=for-the-badge&logo=uvicorn&logoColor=white)
+
 
 
